@@ -1,2 +1,2 @@
-# dashboard
-Dashboard app for application server state using ReactJS
+# Dashboard
+Dashboard application to monitor server state using ReactJs
