@@ -5,5 +5,8 @@
   },
   "env": {
     "es6": true
+  },
+  "rules": {
+    "semi": [2, "never"]
   }
 }
