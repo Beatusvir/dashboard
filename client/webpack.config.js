@@ -6,7 +6,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './src/index.jsx'
+    './src/components/index/index.jsx'
   ],
   module: {
     loaders: [{
@@ -19,6 +19,9 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: 'style!css!sass'
+    }, {
+      test: /\.(png|jpg)$/,
+      loader: 'url?limit=55000'
     }]
   },
   postcss: [autoprefixer({

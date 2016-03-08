@@ -1,0 +1,17 @@
+.server-card-square {
+  font-family: sans-serif;
+  width: 280px;
+  height: 350px;
+}
+.server-ok > .mdl-card__title{
+  color: #C8E6C9;
+  background: linear-gradient(#2E7D32, #43A047);
+  background:
+    url('server-ok.png') bottom no-repeat #2E7D32;
+}
+.server-error > .mdl-card__title{
+  color: #FFCDD2;
+  background: linear-gradient(#C62828, #E53935);
+  background:
+    url('server-error.png') bottom no-repeat #C62828;
+}

@@ -1,15 +1,9 @@
-import React, { PropTypes } from 'react'
-import ReactDOM from 'react-dom'
-import LineChart from './components/linechart/linechart'
-import GaugeChart from './components/gaugechart/gaugechart'
+import React {PropTypes, Component} from 'react'
+import LineChart from '../linechart/linechart'
+import GaugeChart from '../gaugechart/gaugechart'
 
-// Load google chart packages
-google.charts.load('current', {packages: ['corechart','gauge']})
-// Set up callback to draw char afetr loading packages
-google.charts.setOnLoadCallback(init)
-
-class Dashboard extends React.Component {
-  constructor(props) {
+export default class ServerDetail extends Component {
+  constructor (props) {
     super(props)
     this.data = new google.visualization.DataTable();
     this.data.addColumn('number', 'X');
@@ -50,23 +44,14 @@ class Dashboard extends React.Component {
       yellowFrom:75, yellowTo: 90,
       minorTicks: 5
     };
-
-    this.render = this.render.bind(this)
   }
 
-  render () {
+  render(){
     return (
-      <div className="dashboard">
-        <h3>Google Chart</h3>
+      <div className="server-detail">
         <LineChart graphName="line-chart" data={this.data} options={this.options}/>
         <GaugeChart graphName="gauge-chart" data={this.gauge_data} options={this.gauge_options}/>
       </div>
     )
   }
 }
-
-function init() {
-  ReactDOM.render(
-    <Dashboard />, document.getElementById('dashboard')
-    )
-  }
