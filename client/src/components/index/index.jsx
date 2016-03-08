@@ -1,10 +1,10 @@
 import './index.scss'
-import React, { PropTypes } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import Server from '../server/server'
 
 // Load google chart packages
-google.charts.load('current', {packages: ['corechart','gauge']})
+google.charts.load('current', {packages: ['corechart', 'gauge']})
 // Set up callback to draw char afetr loading packages
 google.charts.setOnLoadCallback(init)
 
@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
     this.render = this.render.bind(this)
   }
 
-  render () {
+  render() {
     return (
       <div className="dashboard-content" >
         <div className="mdl-grid">
@@ -38,5 +38,5 @@ class Dashboard extends React.Component {
 function init() {
   ReactDOM.render(
     <Dashboard />, document.getElementById('dashboard')
-    )
-  }
+  )
+}
