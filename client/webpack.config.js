@@ -1,6 +1,6 @@
-var webpack = require('webpack')
-var path = require("path")
-var autoprefixer = require('autoprefixer')
+const webpack = require('webpack')
+const path = require("path")
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
   entry: [
@@ -11,14 +11,15 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.jsx?$/,
+      include: path.resolve(__dirname, 'src'),
       exclude: /node_modules/,
       loader: 'react-hot!babel'
     }, {
       test: /\.css$/,
-      loader: "style!css!postcss"
+      loader: "style-loader!css-loader!postcss-loader"
     }, {
       test: /\.scss$/,
-      loader: 'style!css!sass'
+      loader: 'style-loader!css-loader!sass-loader'
     }, {
       test: /\.(png|jpg)$/,
       loader: 'url?limit=55000'

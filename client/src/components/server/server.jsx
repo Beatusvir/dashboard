@@ -1,6 +1,7 @@
 import './server.scss'
 import React, {Component, PropTypes } from 'react'
 
+// TODO: Test todo
 export default class Server extends Component{
   constructor(props){
     super(props)
