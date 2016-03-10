@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 
 export default class GaugeChart extends React.Component {
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { graphName: '', data: {}, options: {} }
     this.drawChart = this.drawChart.bind(this)
@@ -14,7 +14,7 @@ export default class GaugeChart extends React.Component {
   }
 
   drawChart() {
-    var chart = new google.visualization.Gauge(document.getElementById(this.props.graphName))
+    const chart = new google.visualization.Gauge(document.getElementById(this.props.graphName))
     chart.draw(this.props.data, this.props.options)
   }
 
