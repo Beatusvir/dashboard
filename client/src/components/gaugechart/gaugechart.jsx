@@ -20,9 +20,9 @@ export default class GaugeChart extends React.Component {
 
   render() {
     return (
-      <div className="gauge-chart" id={this.props.graphName}>
+      <section className="gauge-chart" id={this.props.graphName}>
 
-      </div>
+      </section>
     )
   }
 

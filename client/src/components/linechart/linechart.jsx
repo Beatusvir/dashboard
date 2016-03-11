@@ -20,9 +20,9 @@ export default class LineChart extends React.Component {
 
   render() {
     return (
-      <div className="line-chart" id={this.props.graphName}>
+      <section className="line-chart" id={this.props.graphName}>
 
-      </div>
+      </section>
     )
   }
 

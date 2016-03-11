@@ -3,11 +3,30 @@
   width: 280px;
   height: 350px;
 }
-.server-ok > .mdl-card__title{
-  color: #C8E6C9;
-  background: url('server-ok.png') bottom no-repeat #2E7D32;
+
+.mdl-card__subtitle-text{
+  align-self: flex-end;
+  // position: absolute;
+  // top: auto;
+  // left: auto;
+  // bottom: 100px;
+  // right: 15px;
 }
-.server-error > .mdl-card__title{
-  color: #FFCDD2;
-  background: url('server-error.png') bottom no-repeat #C62828;
+
+.server-ok {
+  .mdl-card__subtitle-text, .mdl-card__title-text{
+    color: #C8E6C9;
+  }
+  .mdl-card__title{
+    background: url('server-ok.png') bottom no-repeat #2E7D32;
+  }
+}
+
+.server-error {
+  .mdl-card__subtitle-text, .mdl-card__title-text{
+    color: #FFCDD2;
+  }
+  .mdl-card__title{
+    background: url('server-error.png') bottom no-repeat #C62828;
+  }
 }
