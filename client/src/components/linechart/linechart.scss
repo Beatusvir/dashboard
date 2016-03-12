@@ -1,5 +1,19 @@
 .line-chart{
-  width: 80%;
-  margin: 0 auto;
-  display: block;
+  background: #333;
+  color: #E8EAF6;
+
+  .mdl-cell-title{
+    line-height: 2em;
+    background: #444;
+
+    p{
+      font-size: 18px;
+      height: 100%;
+      vertical-align: bottom;
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+    }
+  }
 }
+
+

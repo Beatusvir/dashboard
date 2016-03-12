@@ -6,7 +6,8 @@ import GaugeChart from '../gaugechart/gaugechart'
 export default class ServerDetail extends Component {
   constructor(props) {
     super(props)
-    this.state = { visible: true }
+    this.state = { visible: true, data: null }
+    this.updateData = this.updateData.bind(this)
     this.closeDetail = this.closeDetail.bind(this)
     this.gauge_data = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
@@ -23,12 +24,30 @@ export default class ServerDetail extends Component {
     };
   }
 
+  componentWillMount() {
+    this.updateData()
+  }
+
   componentDidMount() {
+    //setInterval(this.updateDate(), 5000)
     var dialog = document.querySelector('dialog')
     dialog.showModal()
   }
 
-  closeDetail(){
+  updateData() {
+    // TODO Get data from server api
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'X');
+    data.addColumn('number', 'Some Data');
+
+    data.addRows([
+      [0, 0], [1, 10], [2, 23], [3, 17], [4, 18], [5, 9]
+    ]);
+
+    this.setState({ data: data, graphName: 'Orders' })
+  }
+
+  closeDetail() {
     this.props.closeDialog()
   }
 
@@ -36,9 +55,8 @@ export default class ServerDetail extends Component {
     return (
       <section className="server-detail">
         <dialog className="mdl-dialog" refs="dialog">
-          <h4 className="mdl-dialog__title">{this.props.name}</h4>
           <div className="mdl-dialog__content">
-            <GaugeChart graphName="gauge-chart" data={this.gauge_data} options={null}/>
+            <LineChart graphName={this.state.graphName} data={this.state.data} options={null}/>
           </div>
           <div className="mdl-dialog__actions">
             <button type="button" className="mdl-button" onClick={this.closeDetail}>Close</button>
