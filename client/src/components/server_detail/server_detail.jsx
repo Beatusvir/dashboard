@@ -2,6 +2,7 @@ import './server_detail.scss'
 import React, {PropTypes, Component } from 'react'
 import LineChart from '../linechart/linechart'
 import GaugeChart from '../gaugechart/gaugechart'
+import DonutChart from '../donutchart/donutchart'
 
 export default class ServerDetail extends Component {
   constructor(props) {
@@ -22,6 +23,12 @@ export default class ServerDetail extends Component {
       yellowFrom: 75, yellowTo: 90,
       minorTicks: 5
     };
+
+    this.donutChartData = google.visualization.arrayToDataTable([
+      ['Disc', 'Porcentage'],
+      ['Used', 125],
+      ['Free', 27],
+    ])
   }
 
   componentWillMount() {
@@ -56,7 +63,8 @@ export default class ServerDetail extends Component {
       <section className="server-detail">
         <dialog className="mdl-dialog" refs="dialog">
           <div className="mdl-dialog__content">
-            <LineChart graphName={this.state.graphName} data={this.state.data} options={null}/>
+            <LineChart graphName={this.state.graphName} data={this.state.data}/>
+            <DonutChart graphName={this.state.graphName} data={this.donutChartData}/>
           </div>
           <div className="mdl-dialog__actions">
             <button type="button" className="mdl-button" onClick={this.closeDetail}>Close</button>

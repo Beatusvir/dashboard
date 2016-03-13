@@ -1,35 +1,23 @@
-import './linechart.scss'
+import './donutchart.scss'
 import React, { PropTypes } from 'react'
 
-export default class LineChart extends React.Component {
+export default class DonutChart extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = { graphName: '', data: {} }
     this.options = {
-      colors: ['#9FA8DA'],
+      colors: ['#9FA8DA', '#F48FB1'],
       backgroundColor: { fill: 'transparent' },
-      lineWidth: 4,
-      hAxis: {
-        textPosition: 'none',
-        gridlines: {
-          color: 'transparent'
-        },
-        baselineColor: 'transparent',
-        gridlineColor: 'transparent',
+      pieHole: 0.5,
+      pieSliceTextStyle: {
+        color: 'black',
       },
-      vAxis: {
-        textPosition: 'none',
-        gridlines: {
-          color: 'transparent'
-        },
-        baselineColor: 'transparent',
-        gridlineColor: 'transparent',
-      },
-      legend: {
-        position: 'none'
-      }
+      legend: 'none',
+      pieSliceBorderColor: { fill: 'transparent' },
+      pieSliceText: 'none',
     }
+
     this.drawChart = this.drawChart.bind(this)
   }
 
@@ -38,7 +26,7 @@ export default class LineChart extends React.Component {
   }
 
   drawChart() {
-    const chart = new google.visualization.LineChart(document.getElementById(this.props.graphName))
+    const chart = new google.visualization.PieChart(document.getElementById(this.props.graphName))
     chart.draw(this.props.data, this.options)
   }
 
@@ -53,7 +41,7 @@ export default class LineChart extends React.Component {
           </section>
           <section className="mdl-cell mdl-cell--2-col mdl-cell--middle">
             <h3 className="mdl-color-text--accent">
-              {this.props.data.getFormattedValue(this.props.data.getNumberOfRows() - 1, this.props.data.getNumberOfColumns() - 1) }
+              {this.props.data.getFormattedValue(1, 1) }
             </h3>
           </section>
         </div>
@@ -62,7 +50,7 @@ export default class LineChart extends React.Component {
   }
 }
 
-LineChart.propTypes = {
+DonutChart.propTypes = {
   graphName: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired
 }
