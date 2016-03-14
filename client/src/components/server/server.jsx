@@ -23,7 +23,7 @@ export default class Server extends Component {
 
   render() {
     return (
-      <section className="mdl-cell mdl-cell--3-col">
+      <li>
         <section className={this.class} id={this.props.name}>
           <div className="mdl-card__title mdl-card--expand">
             <h2 className="mdl-card__title-text">{this.props.name}</h2>
@@ -46,7 +46,7 @@ export default class Server extends Component {
             <ServerDetail name={this.props.name} closeDialog={this.toggleDetail}/>
           ) : null
         }
-      </section>
+      </li>
     )
   }
 }

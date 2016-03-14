@@ -7,7 +7,7 @@ export default class DonutChart extends React.Component {
     super(props)
     this.state = { graphName: '', data: {} }
     this.options = {
-      colors: ['#9FA8DA', '#F48FB1'],
+      colors: ['#81D4FA', '#EF9A9A'],
       backgroundColor: { fill: 'transparent' },
       pieHole: 0.5,
       pieSliceTextStyle: {
@@ -16,6 +16,8 @@ export default class DonutChart extends React.Component {
       legend: 'none',
       pieSliceBorderColor: { fill: 'transparent' },
       pieSliceText: 'none',
+      width: 400,
+      height: 250
     }
 
     this.drawChart = this.drawChart.bind(this)
@@ -32,7 +34,7 @@ export default class DonutChart extends React.Component {
 
   render() {
     return (
-      <section className="line-chart">
+      <section className="donut-chart">
         <div className="mdl-grid">
           <div className="mdl-cell mdl-cell--12-col mdl-cell-title">
             <p>{this.props.graphName}</p>

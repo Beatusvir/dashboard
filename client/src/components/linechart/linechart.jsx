@@ -7,7 +7,7 @@ export default class LineChart extends React.Component {
     super(props)
     this.state = { graphName: '', data: {} }
     this.options = {
-      colors: ['#9FA8DA'],
+      colors: ['#81D4FA'],
       backgroundColor: { fill: 'transparent' },
       lineWidth: 4,
       hAxis: {
@@ -28,7 +28,9 @@ export default class LineChart extends React.Component {
       },
       legend: {
         position: 'none'
-      }
+      },
+      width: 400,
+      height: 250
     }
     this.drawChart = this.drawChart.bind(this)
   }

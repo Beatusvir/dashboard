@@ -9,8 +9,10 @@ export default class ServerList extends Component {
       )
     })
     return (
-      <section className="mdl-grid">
-        {serverNode}
+      <section className="server-list">
+        <ul>
+          {serverNode}
+        </ul>
       </section>
     )
   }
