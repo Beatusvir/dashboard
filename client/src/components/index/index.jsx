@@ -15,6 +15,7 @@ class Index extends React.Component {
     this.state = { servers: [], showDashboard: false }
     this.getServers = this.getServers.bind(this)
     this.toggleDashboard = this.toggleDashboard.bind(this)
+    this.closeDashboard = this.closeDashboard.bind(this)
   }
   getServers() {
     //TODO: Get server list from server api
@@ -33,7 +34,10 @@ class Index extends React.Component {
   toggleDashboard(e) {
     e.preventDefault()
     this.setState({ showDashboard: !this.state.showDashboard })
-    console.log(this.state.showDashboard)
+  }
+
+  closeDashboard(){
+    this.setState({ showDashboard: false })
   }
 
   componentDidMount() {
@@ -80,7 +84,7 @@ class Index extends React.Component {
       <div>
         {
           this.state.showDashboard
-            ? <Dashboard/>
+            ? <Dashboard closeDashboard={this.closeDashboard}/>
             : this.showIndex()
         }
       </div>

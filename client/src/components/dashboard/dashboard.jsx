@@ -8,6 +8,7 @@ export default class Dashboard extends Component {
     super(props)
     this.state = { lineData: {}, donutData: {}, lineGraphName: '', donutGraphName: '' }
     this.updateData = this.updateData.bind(this)
+    this.close = this.close.bind(this)
   }
 
   updateData() {
@@ -27,6 +28,10 @@ export default class Dashboard extends Component {
     this.setState({ lineData: lineData, donutData: donutData, lineGraphName: 'Orders', donutGraphName: 'HDD' })
   }
 
+  close(){
+    this.props.closeDashboard()
+  }
+
   componentWillMount() {
     this.updateData()
   }
@@ -34,6 +39,11 @@ export default class Dashboard extends Component {
   render() {
     return (
       <section className="dashboard">
+        <div className="fab-back">
+          <button className="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onClick={this.close}>
+            <i className="material-icons">exit_to_app</i>
+          </button>
+        </div>
         <div className="mdl-grid">
           <div className="mdl-cell mdl-cell--col-4"><LineChart graphName={this.state.lineGraphName} data={this.state.lineData}/></div>
           <div className="mdl-cell mdl-cell--col-4"><DonutChart graphName={this.state.donutGraphName} data={this.state.donutData}/></div>
@@ -45,4 +55,8 @@ export default class Dashboard extends Component {
       </section>
     )
   }
+}
+
+Dashboard.propTypes = {
+  closeDashboard: PropTypes.func.isRequired
 }
