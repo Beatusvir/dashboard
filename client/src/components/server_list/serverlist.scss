@@ -1,0 +1,25 @@
+.server-list{
+  background: #efefef;
+
+  .row{
+    padding-top: 20px;
+  }
+}
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+}
+
+.bottom-right{
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}

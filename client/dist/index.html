@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Server Dashoard</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.light_blue-red.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
   <style>
-  .mdl-index-layout-header{
-    height: 200px;
-    background: url('./images/banner.jpg') bottom / cover;
-    color: #efefef;
-  }
-  .mdl-index-layout .mdl-layout__header,
-  .mdl-index-layout .mdl-layout__drawer-button,
-  .mdl-index-layout .mdl-navigation__link {
-    /* This background is dark, so we set text to white. Use 87% black instead if
+    .mdl-index-layout-header {
+      height: 200px;
+      background: url('./images/banner.jpg') bottom / cover;
+      color: #efefef;
+    }
+
+    .mdl-index-layout .mdl-layout__header,
+    .mdl-index-layout .mdl-layout__drawer-button,
+    .mdl-index-layout .mdl-navigation__link {
+      /* This background is dark, so we set text to white. Use 87% black instead if
     your background is light. */
-    color: white;
-  }
+      color: white;
+    }
   </style>
 </head>
-<body>
-  <div id="dashboard">
 
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="collapse navbar-collapse">
+          <p class="navbar-text navbar-right">Dashboard</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="dashboard"></div>
+      </div>
+    </div>
   </div>
 
   <!--[if lt IE 9]>
   <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+  crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="bundle.js"></script>
-  <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/js/jquery.fs.selecter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/js/jquery.fs.stepper.min.js"></script>
 </body>
+
 </html>

@@ -28,7 +28,7 @@ export default class Dashboard extends Component {
     this.setState({ lineData: lineData, donutData: donutData, lineGraphName: 'Orders', donutGraphName: 'HDD' })
   }
 
-  close(){
+  close() {
     this.props.closeDashboard()
   }
 
@@ -39,18 +39,18 @@ export default class Dashboard extends Component {
   render() {
     return (
       <section className="dashboard">
-        <div className="fab-back">
-          <button className="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onClick={this.close}>
-            <i className="material-icons">exit_to_app</i>
+        <div className="bottom-center">
+          <button className="btn btn-danger" onClick={this.close}>
+            <i className="glyphicon glyphicon-log-out"></i>
           </button>
         </div>
-        <div className="mdl-grid">
-          <div className="mdl-cell mdl-cell--col-4"><LineChart graphName={this.state.lineGraphName} data={this.state.lineData}/></div>
-          <div className="mdl-cell mdl-cell--col-4"><DonutChart graphName={this.state.donutGraphName} data={this.state.donutData}/></div>
-          <div className="mdl-cell mdl-cell--col-4"><LineChart graphName='Line 2' data={this.state.lineData}/></div>
-          <div className="mdl-cell mdl-cell--col-4"><DonutChart graphName='Donu 2' data={this.state.donutData}/></div>
-          <div className="mdl-cell mdl-cell--col-4"><LineChart graphName='Line 4' data={this.state.lineData}/></div>
-          <div className="mdl-cell mdl-cell--col-4"><DonutChart graphName='Donu 3' data={this.state.donutData}/></div>
+        <div className="row">
+          <LineChart graphName={this.state.lineGraphName} data={this.state.lineData}/>
+          <DonutChart graphName={this.state.donutGraphName} data={this.state.donutData}/>
+          <LineChart graphName='Line 2' data={this.state.lineData}/>
+          <DonutChart graphName='Donu 2' data={this.state.donutData}/>
+          <LineChart graphName='Line 4' data={this.state.lineData}/>
+          <DonutChart graphName='Donu 3' data={this.state.donutData}/>
         </div>
       </section>
     )

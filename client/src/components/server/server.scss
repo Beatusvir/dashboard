@@ -1,34 +1,21 @@
-li{
-  list-style: none;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-.server-card-square {
-  font-family: sans-serif;
-  width: 280px;
-  height: 350px;
-}
-
-.mdl-card__subtitle-text{
-  align-self: flex-end;
+.server{
+  height: 500px;
 }
 
 .server-ok {
-  .mdl-card__subtitle-text, .mdl-card__title-text{
-    color: #C8E6C9;
-  }
-  .mdl-card__title{
-    background: url('server-ok.png') bottom no-repeat #2E7D32;
-  }
+    background-image: url('server-ok.png');
+    background-repeat: no-repeat;
+    width: 300px !important;
+    height: 300px !important;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .server-error {
-  .mdl-card__subtitle-text, .mdl-card__title-text{
-    color: #FFCDD2;
-  }
-  .mdl-card__title{
-    background: url('server-error.png') bottom no-repeat #C62828;
-  }
+    background-image: url('server-error.png');
+    background-repeat: no-repeat;
+    width: 300px !important;
+    height: 300px !important;
+    margin: 0 auto;
+    padding: 0;
 }

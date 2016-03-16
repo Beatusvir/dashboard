@@ -36,7 +36,7 @@ class Index extends React.Component {
     this.setState({ showDashboard: !this.state.showDashboard })
   }
 
-  closeDashboard(){
+  closeDashboard() {
     this.setState({ showDashboard: false })
   }
 
@@ -45,37 +45,11 @@ class Index extends React.Component {
     //setInterval(this.getServers.bind(this), this.props.pollInterval)
   }
 
-  showIndex(){
+  showIndex() {
     return (
-      <div className="mdl-layout mdl-js-layout">
-              <header className="mdl-layout__header mdl-layout__header--scroll">
-                <div className="mdl-layout__header-row">
-                  <span className="mdl-layout-title">Server Monitor</span>
-                  <div className="mdl-layout-spacer"></div>
-                  <nav className="mdl-navigation mdl-layout--large-screen-only">
-                    <a className="mdl-navigation__link" href="" onClick={this.toggleDashboard}>Dashboard</a>
-                  </nav>
-                </div>
-              </header>
-              <div className="mdl-layout__drawer">
-                <span className="mdl-layout-title">Server Monitor</span>
-                <nav className="mdl-navigation">
-                  <a className="mdl-navigation__link" href="">Dashboard</a>
-                </nav>
-              </div>
-              <main className="mdl-layout__content">
-                <div className="page-content">
-                  <section className="dashboard-content">
-                    <ServerList data={this.state.servers}/>
-                    <div className="fab">
-                      <button className="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-                        <i className="material-icons">add</i>
-                      </button>
-                    </div>
-                  </section>
-                </div>
-              </main>
-            </div>
+      <div className="container-fluid">
+        <ServerList data={this.state.servers}/>
+      </div>
     )
   }
 

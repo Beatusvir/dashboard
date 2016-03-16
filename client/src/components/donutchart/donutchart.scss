@@ -1,17 +1,26 @@
+.chart{
+  background: #444;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
 .donut-chart{
-  background: #333;
   color: #E8EAF6;
 
-  .mdl-cell-title{
+  .col-title{
     line-height: 2em;
-    background: #444;
+    background: #333;
 
     p{
       font-size: 18px;
       height: 100%;
-      vertical-align: bottom;
       margin-top: 0.5em;
       margin-left: 0.5em;
     }
+  }
+
+  .col-graph{
+    margin-top: 20px;
+    background: #00ff00 !important;
   }
 }

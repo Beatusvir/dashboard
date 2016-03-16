@@ -7,7 +7,6 @@ export default class ServerDetail extends Component {
     super(props)
     this.state = { visible: true, updates: null }
     this.updateData = this.updateData.bind(this)
-    this.closeDetail = this.closeDetail.bind(this)
   }
 
   componentWillMount() {
@@ -16,8 +15,6 @@ export default class ServerDetail extends Component {
 
   componentDidMount() {
     //setInterval(this.updateDate(), 5000)
-    var dialog = document.querySelector('dialog')
-    dialog.showModal()
   }
 
   updateData() {
@@ -40,47 +37,44 @@ export default class ServerDetail extends Component {
     return result
   }
 
-  closeDetail() {
-    this.props.closeDialog()
-  }
-
   render() {
     const detailNodes = this.state.updates.map((update, i) => {
       return (
-        <DetailNode updated={update.updated} detail={update.detail} status={update.status} key={update.key}/>
+        <DetailNode updated={update.updated} detail={update.detail} status={update.status} key={update.key} rowStyle={update.status ? 'success' : 'danger'}/>
       )
     })
     return (
-      <section className="server-detail">
-        <dialog className="mdl-dialog" refs="dialog">
-          <div className="mdl-dialog__content">
-            <div className="mdl-grid">
-              <div className="mdl-cel mdl-cel--col-12">
-                <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp full-width">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th className="full-width">Detail</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+      <div className="modal fade" tabIndex="-1" role="dialog" id="modalDetail">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times; </span></button>
+              <h4 className="modal-title">Updates</h4>
+            </div>
+            <div className="modal-body">
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th  className="text-center">Date</th>
+                    <th  className="text-center">Status</th>
+                    <th  className="text-center">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
                     {detailNodes}
-                  </tbody>
-                </table>
-              </div>
+              </tbody>
+              </table>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
-          <div className="mdl-dialog__actions">
-            <button type="button" className="mdl-button" onClick={this.closeDetail}>Close</button>
-          </div>
-        </dialog>
-      </section>
+        </div>
+      </div>
     )
   }
 }
 
 ServerDetail.propTypes = {
-  name: PropTypes.string.isRequired,
-  closeDialog: PropTypes.func.isRequired
+  name: PropTypes.string.isRequired
 }

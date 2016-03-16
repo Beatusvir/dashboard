@@ -1,3 +1,4 @@
+import './detail_node.scss'
 import React, {PropTypes, Component } from 'react'
 
 export default class DetailNode extends Component {
@@ -7,7 +8,7 @@ export default class DetailNode extends Component {
 
   render(){
     return (
-      <tr>
+      <tr className={this.props.rowStyle}>
         <td>{this.props.updated}</td>
         <td>{this.props.status ? 'Ok' : 'Error'}</td>
         <td>{this.props.detail}</td>
@@ -19,5 +20,6 @@ export default class DetailNode extends Component {
 DetailNode.propTypes = {
   updated: PropTypes.string.isRequired,
   status: PropTypes.bool.isRequired,
-  detail: PropTypes.string
+  detail: PropTypes.string,
+  rowStyle: PropTypes.string.isRequired
 }

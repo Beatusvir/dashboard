@@ -46,20 +46,24 @@ export default class LineChart extends React.Component {
 
   render() {
     return (
-      <section className="line-chart">
-        <div className="mdl-grid">
-          <div className="mdl-cell mdl-cell--12-col mdl-cell-title">
-            <p>{this.props.graphName}</p>
-          </div>
-          <section id={this.props.graphName} className="mdl-cell mdl-cell--10-col">
-          </section>
-          <section className="mdl-cell mdl-cell--2-col mdl-cell--middle">
-            <h3 className="mdl-color-text--accent">
-              {this.props.data.getFormattedValue(this.props.data.getNumberOfRows() - 1, this.props.data.getNumberOfColumns() - 1) }
-            </h3>
-          </section>
-        </div>
-      </section>
+      <div className="col-md-4">
+        <section className= "line-chart">
+            <div className="col-md-12 col-title">
+              <p>{this.props.graphName}</p>
+            </div>
+            <div className="col-graph">
+              <div id={this.props.graphName} className="col-md-10">
+              </div>
+              <div className="graph-value">
+                <div className="col-md-2">
+                  <h3 className="">
+                    {this.props.data.getFormattedValue(this.props.data.getNumberOfRows() - 1, this.props.data.getNumberOfColumns() - 1) }
+                  </h3>
+                </div>
+              </div>
+            </div>
+        </section>
+      </div>
     )
   }
 }
